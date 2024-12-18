@@ -1,0 +1,102 @@
+/* Scoped Form Styles */
+form.form-styles {
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1.6rem; /* Ensures consistency without interfering with other text styles */
+}
+
+form.form-styles div {
+    margin-bottom: 20px;
+}
+
+/* Scoped Labels */
+form.form-styles label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.4rem;
+    color: #333;
+}
+
+/* Scoped Inputs, Textarea, and Select */
+form.form-styles input,
+form.form-styles textarea,
+form.form-styles select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    transition: border-color 0.3s ease;
+}
+
+form.form-styles input:focus,
+form.form-styles textarea:focus,
+form.form-styles select:focus {
+    border-color: #007BFF;
+    outline: none;
+    background-color: #eef7ff;
+}
+
+/* Scoped Buttons */
+form.form-styles .button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+form.form-styles .button:hover {
+    background-color: #0056b3;
+}
+
+/* Scoped Address Section */
+form.form-styles .address-details label {
+    font-size: 1.4rem;
+    margin-top: 10px;
+    display: block;
+}
+
+form.form-styles .address-details input {
+    margin-bottom: 10px;
+}
+
+/* Scoped Checkbox and Radio Buttons */
+form.form-styles input[type="checkbox"],
+form.form-styles input[type="radio"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+form.form-styles label.inline {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+/* Scoped Card Details Section */
+form.form-styles .card-details {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-top: 10px;
+}
+
+form.form-styles .card-details label {
+    font-size: 1.4rem;
+    margin-top: 10px;
+    display: block;
+}
+
+form.form-styles .card-details input {
+    width: calc(100% - 20px);
+    margin-top: 5px;
+}

@@ -1,0 +1,173 @@
+<!-- NLOPEZFINALPROJECT -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lopez Jiu Jitsu</title>
+    <!-- LINKING HOMEPAGE STYLE SHEET -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* INTERNAL STYLING USING ID AND CLASS SELECTOR */
+        #back-to-top {
+            height: 1rem;
+            margin: 0;
+            padding: 1.8rem;
+            border: none;
+        }
+        .instructor-headshots {
+            height: 27rem;
+            width: 27rem;
+            border-radius: 10%;
+        }
+        .storefront-pic {
+            height: 40rem;
+            width: 50rem;
+            margin: 1rem;
+            border-radius: 10%;
+        }
+    </style>
+</head>
+<body>  
+    <!-- NAVBAR CONTAINING LOGO AND LINKS -->
+    <div class="navbar-container navbar-font" id="top">
+        <!-- USING UNORDERED LIST AND LIST ITEM -->
+        <ul class="nav-links">
+            <li>
+                <img src="assets/matkings-logo.png" class="hover-effect" style="height: 20rem; width: 20rem;" alt="matkings-logo">
+            </li>
+            <li><a href="index.html" class="hover-effect">Intro Page</a></li>
+            <li><a href="signup.html" class="hover-effect">Application Page</a></li>
+          
+        </ul>
+    </div>
+    <!-- HEADER WITH IMAGE OVERLAY -->
+    <div class="banner-header">
+        <h1 style="color: white;">Mats for Kings and Queens</h1>
+    </div>
+    <!-- ABOUT SECTION -->
+     <!-- WILL BE BROKEN UP INTO TWO SEPERATE DIVS AND USE FLEX BOX TO MAKE THEM HAVE A HORIZONTAL FLOW -->
+    <div class="box-container about-us-text">
+        <div class="full-box">
+            <h2>Welcome to Lopez Jiu Jitsu!</h2>
+            <p>we strive to empower individuals through the art of Brazilian Jiu Jitsu. At MatKings, we are dedicated to fostering discipline, integrity, fitness, and self-defense in a supportive and inclusive environment.</p>
+            <p>Our mission is to provide a comfortable space for everyone—whether you're a beginner or an experienced practitioner—to grow, both on and off the mat. Join us and take the first step toward becoming the best version of yourself!</p>
+        </div>
+    </div>
+    <div class="box-container">
+        <div class="full-box">
+            <h2>Our Facility</h2>
+            <p>At Lopez Jiu Jitsu, our gym is designed with your comfort and growth in mind. We feature spacious, high-quality mats for training, clean locker rooms, and showers to ensure convenience before and after sessions. After a hard workout, relax and unwind in our beautifully maintained yard, the perfect spot to connect with fellow members and recharge.</p>
+        </div>
+     </div>
+    <!-- GYM IMAGES -->
+     <div style="display: flex; justify-content: space-around;">
+        <img src="./assets/gym-pic-1.jpeg" class="storefront-pic" alt="gym-pic-1">
+        <img src="./assets/gym-pic-2.jpeg" class="storefront-pic" alt="gym-pic-2">
+        <img src="./assets/gym-pic-3.jpeg" class="storefront-pic" alt="gym-pic-3">
+     </div>
+    <!-- OUR INSTRUCTORS -->
+     <div class="box-container">
+        <div class="box">
+            <div class="hover-effect" style="display: flex; flex-direction: column; align-items: center;">
+                <img src="./assets/head-coach-headshot.jpeg" class="instructor-headshots" style="margin-bottom: 20px;"/>
+                <h2>Faustino Persi</h2>
+                <h5>Owner/Head Instructor</h5>
+            </div>
+        </div>
+        <div class="box">
+            <h2>Who is Faustino?</h2>
+            <p>Faustino, from Colombia, brings a lifetime of dedication to Brazilian Jiu Jitsu. Specializing in grappling, self-defense, and ground control, he is committed to preserving the art’s traditions and empowering students to reach their full potential.</p>            <ul>
+                <li>Gold Medalist at the 2020 Pan-American Jiu Jitsu Championship</li>
+                <li>Featured in the 2021 documentary "The Art of Grappling"</li>
+                <li>Ranked among the Top 10 Jiu Jitsu Coaches by the National Martial Arts Association</li>
+            </ul>
+            
+        </div>
+     </div>
+    <div class="box-container">
+        <div class="box">
+            <div class="hover-effect" style="display: flex; flex-direction: column; align-items: center;">
+                <img src="./assets/assistant-coach-headshot.jpeg" class="instructor-headshots" style="margin-bottom: 20px;"/>
+                <h2>Miguel Suarez</h2>
+                <h5>Assistant Instructor</h5>
+            </div>
+        </div>
+        <div class="box">
+            <h2>Who Is Miguel?</h2>
+            <p>Miguel, from Queens, NYC, brings years of dedication to Brazilian Jiu Jitsu. Known for his precision and adaptability, he specializes in grappling and self-defense, helping students build confidence and discipline. A respected mentor, Miguel inspires practitioners to embrace the art and reach their goals.</p>            <ul>
+                <li>Champion of the 2021 New York Open Jiu Jitsu Tournament</li>
+                <li>Featured instructor in the 2022 documentary "Masters of the Mat"</li>
+                <li>Certified Black Belt under one of Brazil's most renowned academies</li>
+            </ul>            
+        </div>
+    </div>
+<!-- CLASSES WE OFFER -->
+<div style="padding: 5rem;">
+    <h2 style="text-align: center; font-size: 3rem; margin-bottom: 20px;">Gym Schedule</h2>
+    <table style="width: 100%; border-collapse: collapse; text-align: center; font-size: 2.5rem; table-layout: fixed;" id="schedule">
+        <thead>
+            <tr style="background-color: #f4f4f4; font-weight: bold;">
+                <th style="border: 2px solid #ccc; padding: 15px; color: black;">Day</th>
+                <th style="border: 2px solid #ccc; padding: 15px; color: black;">Morning<br>(7:00 AM - 8:00 AM)</th>
+                <th style="border: 2px solid #ccc; padding: 15px; color: black;">Evening Beginner<br>(6:00 PM - 7:00 PM)</th>
+                <th style="border: 2px solid #ccc; padding: 15px; color: black;">Evening Advanced<br>(7:00 PM - 8:00 PM)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="border: 2px solid #ccc; padding: 15px; color: black;">Monday</td>
+                <td style="border: 2px solid #ccc; padding: 15px; color: black;">All Levels</td>
+                <td style="border: 2px solid #ccc; padding: 15px; color: black;">Beginner</td>
+                <td style="border: 2px solid #ccc; padding: 15px; color: black;">Advanced</td>
+            </tr>
+            <tr style="background-color: #f9f9f9;">
+                <td style="border: 2px solid #ccc; padding: 15px; color: black;">Tuesday</td>
+                <td style="border: 2px solid #ccc; padding: 15px; color: black;">All Levels</td>
+                <td style="border: 2px solid #ccc; padding: 15px; color: black;">Beginner</td>
+                <td style="border: 2px solid #ccc; padding: 15px; color: black;">Advanced</td>
+            </tr>
+            <tr>
+                <td style="border: 2px solid #ccc; padding: 15px; color: black;">Wednesday</td>
+                <td style="border: 2px solid #ccc; padding: 15px; color: black;">All Levels</td>
+                <td style="border: 2px solid #ccc; padding: 15px; color: black;">Beginner</td>
+                <td style="border: 2px solid #ccc; padding: 15px; color: black;">Advanced</td>
+            </tr>
+            <tr style="background-color: #f9f9f9;">
+                <td style="border: 2px solid #ccc; padding: 15px; color: black;">Thursday</td>
+                <td style="border: 2px solid #ccc; padding: 15px; color: black;">All Levels</td>
+                <td style="border: 2px solid #ccc; padding: 15px; color: black;">Beginner</td>
+                <td style="border: 2px solid #ccc; padding: 15px; color: black;">Advanced</td>
+            </tr>
+            <tr>
+                <td style="border: 2px solid #ccc; padding: 15px; color: black;">Friday</td>
+                <td style="border: 2px solid #ccc; padding: 15px; color: black;">All Levels</td>
+                <td style="border: 2px solid #ccc; padding: 15px; color: black;">Beginner</td>
+                <td style="border: 2px solid #ccc; padding: 15px; color: black;">Advanced</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+    <!-- LOCATION -->
+    <div class="box-container">
+        <!-- THIS IS AN EMBEDDED MAP FROM GOOGLE MAPS, IT HELPS SHOW THE USER WHERE MY RESTARAUNT IS LOCATED -->
+        <iframe class="map-box" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24174.633657221675!2d-73.94719010443855!3d40.76578106101156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f36e7b5a553%3A0x9c0aafc4ac84110e!2sAstoria%2C%20Queens%2C%20NY!5e0!3m2!1sen!2sus!4v1733282300326!5m2!1sen!2sus"  width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <div class="box">
+            <h2>Find The Mats</h2>
+            <p>Located in the vibrant neighborhood of Astoria, a growing hub for martial arts enthusiasts. Just a short walk from the N/W train at Broadway, our gym is easily accessible and perfectly situated for anyone looking to train. We chose Astoria as our home to contribute to its dynamic martial arts community and provide a space for learning, discipline, and growth.</p>
+        </div>        
+    </div>
+    <!-- CONTACT US (MAILTO) -->
+    <div id="contact" class="box-container">
+        <div class="full-box" style="height: 22rem;">
+            <h2>Reach Out To Us!</h2>
+            <p>Located in the heart of Astoria, we’re ready to help you start your Jiu Jitsu journey. Whether you’re looking to join a class, schedule a private session, or have questions about our facility, we’re here to assist. Reach out to us via email, and let’s get you on the mat!</p>
+            <a href="mailto:MatKingsJiuJitsu@gmail.com?subject=Membership Inquiry" class="hover-effect">E-Mail</a>
+        </div>
+    </div>    
+    <!-- BACK TO TOP -->
+     <div class="full-box hover-effect" id="back-to-top" style="height: 5rem; font-size: 2rem;">
+        <a href="#top" class="back-to-top">Back to Top</a>
+     </div>
+</body>
+</html>

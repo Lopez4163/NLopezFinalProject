@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MatKings JiuJitsu</title>
+    <link rel="stylesheet" href="form-styles.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<script>
+function validation() {
+    var name = document.form.name.value;
+    var email = document.form.email.value;
+    var phoneNumber = document.form.phoneNumber.value;
+    var password = document.form.password.value;
+    var address = document.form.address.value;
+    var apt = document.form.apt.value;
+    var city = document.form.city.value;
+    var state = document.form.state.value;
+    var country = document.form.country.value;
+    var zip = document.form.zip.value;
+    var gender = document.form.gender.value;
+    //using querySelector to get the value of the selected radio button
+    var checkedMonthly = document.getElementById('checked-monthly').checked;
+    var checkedHalfYear = document.getElementById('checked-halfyear').checked;
+    var checkedYearly = document.getElementById('checked-yearly').checked;
+    var payMethod = document.form['pay-method'].value;
+    var cardNumber = document.form['card-number'].value;
+    var expDate = document.form['exp-date'].value;
+    var cvv = document.form.cvv.value;
+    var hearAbout = document.form['hearAbout[]'];
+    var isChecked = false;
+
+
+
+    // NAME VALIDATION
+    // Check if the name field is empty
+    if (name.trim() === "") {
+        alert("Please enter your name");
+        document.form.name.focus();
+        return false;
+    }
+    // Ensure the name contains only letters (no numbers)
+    if (!isNaN(name)) {
+        alert("Please enter only letters for your name");
+        document.form.name.focus();
+        return false;
+    }
+
+    // EMAIL VALIDATION
+    // Check if the email field is empty
+    if (email.trim() === "") {
+        alert("Please enter your email");
+        document.form.email.focus();
+        return false;
+    }
+    // Check if the email contains '@'
+    if (email.indexOf('@') < 0) {
+        alert("Please enter a valid email with '@'");
+        document.form.email.focus();
+        return false;
+    }
+    // Check if the email contains '.'
+    if (email.indexOf('.') < 0) {
+        alert("Please enter a valid email with '.'");
+        document.form.email.focus();
+        return false;
+    }
+
+    // PHONE NUMBER VALIDATION
+    // Check if the phone number is empty
+    if (phoneNumber.trim() === "") {
+        alert("Please enter your phone number");
+        document.form.phoneNumber.focus();
+        return false;
+    }
+    // Ensure the phone number contains only numbers
+    if (isNaN(phoneNumber)) {
+        alert("Please enter only numbers for your phone number");
+        document.form.phoneNumber.focus();
+        return false;
+    }
+    // Check if the phone number is exactly 10 digits
+    if (phoneNumber.length !== 10) {
+        alert("Your phone number must be 10 digits");
+        document.form.phoneNumber.focus();
+        return false;
+    }
+
+    // PASSWORD VALIDATION
+    // Check if the password is empty
+    if (password.trim() === "") {
+        alert("Please enter your password");
+        document.form.password.focus();
+        return false;
+    }
+    // Ensure the password length is between 6 and 15 characters
+    if (password.length < 6 || password.length > 15) {
+        alert("Your password must be between 6 and 15 characters");
+        document.form.password.focus();
+        return false;
+    }
+
+    // ADDRESS VALIDATION
+    // Check if the address is empty
+    if (address.trim() === "") {
+        alert("Please enter your address");
+        document.form.address.focus();
+        return false;
+    }
+    // Ensure the address length is between 5 and 30 characters
+    if (address.length < 5 || address.length > 30) {
+        alert("Your address must be between 5 and 30 characters");
+        document.form.address.focus();
+        return false;
+    }
+    // Ensure the address contains only letters, numbers, and spaces
+    // we trim to ensure a clean value
+    address = address.trim();
+    // loop through each character in the address
+    for (let i = 0; i < address.length; i++) {
+        // we get the character at the current index
+        let char = address[i];
+        // we check if the character is not a letter, number, or space
+        if (!((char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z') || (char >= '0' && char <= '9') || char === ' ')) {
+            alert("Please enter only letters, numbers, and spaces for your address");
+            document.form.address.focus();
+            return false;
+        }
+    }
+    // APARTMENT VALIDATION
+    // Check if the apartment number is empty
+    if (apt.trim() === "") {
+        alert("Please enter your apartment number");
+        document.form.apt.focus();
+        return false;
+    }
+    // Ensure the apartment number length is between 1 and 5 characters
+    if (apt.length < 1 || apt.length > 5) {
+        alert("Your apartment number must be between 1 and 5 characters");
+        document.form.apt.focus();
+        return false;
+    }
+    // Ensure the apartment number contains only letters, numbers, and spaces
+    // we trim to ensure a clean value
+    apt = apt.trim();
+    // loop through each character in the apartment number
+    for (let i = 0; i < apt.length; i++) {
+        // we get the character at the current index
+        let char = apt[i];
+        // we check if the character is not a letter, number, or space
+        if (!((char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z') || (char >= '0' && char <= '9') || char === ' ')) {
+            alert("Please enter only letters, numbers, and spaces for your apartment number");
+            document.form.apt.focus();
+            return false;
+        }
+    }
+    // CITY VALIDATION
+    // Check if the city field is empty
+    if (city.trim() === "") {
+        alert("Please enter your city");
+        document.form.city.focus();
+        return false;
+    }
+    // Ensure the city length is between 3 and 20 characters
+    if (city.length < 3 || city.length > 20) {
+        alert("Your city must be between 3 and 20 characters");
+        document.form.city.focus();
+        return false;
+    }
+
+    // Ensure the city contains only letters and spaces
+    city = city.trim();
+    // loop through each character in the city
+    for (let i = 0; i < city.length; i++) {
+        // we get the character at the current index
+        let char = city[i];
+        // we check if the character is not a letter or space
+        if (!((char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z') || char === ' ')) {
+            alert("Please enter only letters and spaces for your city");
+            document.form.city.focus();
+            return false;
+        }
+    }
+
+    // STATE VALIDATION
+    // Check if the state field is selected
+    if (state.trim() === "") {
+        alert("Please select a state");
+        document.form.state.focus();
+        return false;
+    }
+
+    // ZIP CODE VALIDATION
+    // Check if the zip code is empty
+    if (zip.trim() === "") {
+        alert("Please enter your zip code");
+        document.form.zip.focus();
+        return false;
+    }
+    // Ensure the zip code contains only numbers
+    if (isNaN(zip)) {
+        alert("Please enter only numbers for your zip code");
+        document.form.zip.focus();
+        return false;
+    }
+    // Ensure the zip code is exactly 5 digits
+    if (zip.length !== 5) {
+        alert("Your zip code must be 5 digits");
+        document.form.zip.focus();
+        return false;
+    }
+
+    // GENDER VALIDATION
+    // Ensure the gender field is selected
+    if (gender.trim() === "") {
+        alert("Please select your gender");
+        document.form.gender.focus();
+        return false;
+    }
+
+    // PRICE PLAN VALIDATION
+    // Ensure a price plan is selected
+    if (!checkedMonthly && !checkedHalfYear && !checkedYearly) {
+        alert("Please select a price plan");
+        document.form['plan'][0].focus();
+        return false;
+    }
+
+    // PAYMENT METHOD VALIDATION
+    // Ensure a payment method is selected
+    if (!payMethod) {
+        alert("Please select a payment method");
+        document.form['pay-method'][0].focus();
+        return false;
+    }
+
+    // CARD NUMBER VALIDATION
+    // Check if the card number is empty
+    if (cardNumber.trim() === "") {
+        alert("Please enter your card number");
+        document.form['card-number'].focus();
+        return false;
+    }
+    // Ensure the card number contains only numbers
+    if (isNaN(cardNumber)) {
+        alert("Please enter only numbers for your card number");
+        document.form['card-number'].focus();
+        return false;
+    }
+    // Ensure the card number is BETWEEN 15 AND 16 digits
+    if (cardNumber.length !== 16) {
+        alert("Your card number must be 16 digits");
+        document.form['card-number'].focus();
+        return false;
+    }
+    // EXPIRATION DATE VALIDATION
+    // Check if the expiration date is empty
+    if (expDate.trim() === "") {
+        alert("Please enter your expiration date");
+        document.form['exp-date'].focus();
+        return false;
+    }
+    // check if expiration date is today or in the future
+    var today = new Date();
+    var exp = new Date(expDate);
+    if (exp < today) {
+        alert("Your expiration date must be today or in the future");
+        document.form['exp-date'].focus();
+        return false;
+    }
+    // CVV VALIDATION
+    // Check if the CVV is empty
+    if (cvv.trim() === "") {
+        alert("Please enter your CVV");
+        document.form.cvv.focus();
+        return false;
+    }
+    // check if CCV contains only numbers
+    if (isNaN(cvv)) {
+        alert("Please enter only numbers for your CVV");
+        document.form.cvv.focus();
+        return false;
+    }
+    // check if CVV is exactly 3 digits
+    if (cvv.length !== 3) {
+        alert("Your CVV must be 3 digits");
+        document.form.cvv.focus();
+        return false;
+    }
+    // HOW DID YOU HEAR ABOUT US VALIDATION
+    // Check if at least one option is selected
+    for (var i = 0; i < hearAbout.length; i++) {
+         // Check if the checkbox is checked
+        if (hearAbout[i].checked) {
+            // Set isChecked to true
+            isChecked = true;
+            break;
+        }
+    }
+    // If no option is selected, display an alert   
+    if (!isChecked) {
+    alert("Please select at least one option for how you heard about us.");
+    return false;
+    }
+
+
+
+    
+
+    return true; // Allow form submission if all validations pass
+}
+
+</script>
+
+<body>
+    <!-- NAVBAR CONTAINING LOGO AND LINKS -->
+    <div class="navbar-container navbar-font" id="top">
+        <ul class="nav-links">
+            <li>
+                <a href="index.html">
+                    <img src="assets/matkings-logo.png" class="hover-effect" style="height: 20rem; width: 20rem;" alt="matkings-logo">
+                </a>
+            </li>
+            <li><a href="index.html" class="hover-effect">Home</a></li>
+            <li><a href="creative.html" class="hover-effect">Sign Up</a></li>
+        </ul>
+    </div>
+
+    <!-- JOIN US HEADER WITH IMAGE OVERLAY -->
+    <div class="banner-header">
+        <h1 style="color: white;">Join Us!</h1>
+    </div>
+
+    <form name="form" method="post"  onsubmit="return validation()" class="form-styles">
+        <!-- NAME -->
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" placeholder="Enter your name">
+        </div>
+        <br>
+
+        <!-- EMAIL -->
+        <div>
+            <label for="email">Email:</label>
+            <input type="text" name="email" id="email" placeholder="Enter your email">
+        </div>
+        <br>
+
+        <!-- PHONE NUMBER -->
+        <div>
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="text" name="phoneNumber" id="phoneNumber" placeholder="Enter your phone number">
+        </div>
+        <br>
+
+        <!-- PASSWORD -->
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" placeholder="Enter your password">
+        </div>
+        <br>
+
+        <!-- ADDRESS -->
+        <div>
+            <label for="address">Address:</label>
+            <input type="text" name="address" id="address" placeholder="Enter your address">
+        </div>
+    
+        <div>
+            <label for="apt">Apartment, Suite, etc.:</label>
+            <input type="text" name="apt" id="apt" placeholder="Enter your apartment number (optional)">
+        </div>
+    
+        <div>
+            <label for="city">City:</label>
+            <input type="text" name="city" id="city" placeholder="Enter your city">
+        </div>
+    
+        <div>
+            <label for="state">State:</label>
+            <select name="state" id="state">
+                <option value="" disabled selected>Select a state</option>
+                <!-- State abbreviations will be populated dynamically -->
+            </select>
+        </div>
+        
+
+        <div>
+            <label for="zip">Zip Code:</label>
+            <input type="text" name="zip" id="zip" placeholder="Enter your zip code">
+        </div>
+    
+        <div>
+            <label for="country">Country:</label>
+            <input type="text" name="country" id="country" value="United States">
+        </div>
+        <br>
+
+        <!-- DROPDOWN SELECT GENDER -->
+        <div>
+            <label for="gender">Select Gender:</label>
+            <br>
+            <select name="gender" id="gender">
+                <option value="" disabled selected>Select a Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Prefer-not-to-say">Prefer Not To Say</option>
+            </select>
+        </div>
+        <br>
+
+        <!-- RADIAL SELECT PRICE PLAN -->
+        <div>
+            <label for="plan">Select Price Plan:</label>
+            <br>
+            <label><input name="plan" type="radio" id="checked-monthly" value="monthly"> Monthly: $30 </label>
+            <br>
+            <label><input name="plan" type="radio" id="checked-halfyear" value="six-months"> 6 Months: $140</label>
+            <br>
+            <label><input name="plan" type="radio" id="checked-yearly" value="yearly"> Yearly: $300</label>            
+        </div>
+        <br>
+
+        <!-- RADIAL SELECT PAYMENT METHOD -->
+        <div>
+            <label>Select Payment Method</label>
+            <div>
+                <input name="pay-method" type="radio" value="credit"> Credit
+                <input name="pay-method" type="radio" value="debit"> Debit
+            </div>
+        </div>
+        <div>
+            <label for="card-number">Card Number:</label>
+            <input type="text" name="card-number" id="card-number" placeholder="Enter your card number" maxlength="16">
+        </div>
+        <div>
+            <label for="exp-date">Expiration Date:</label>
+            <input type="month" name="exp-date" id="exp-date">
+        </div>
+                
+        <!-- CVV -->
+        <div>
+            <label for="cvv">CVV:</label>
+            <input type="text" name="cvv" id="cvv" placeholder="Enter your CVV" maxlength="3" >
+        </div>
+        <br>
+        <!-- HOW DID YOU HEAR ABOUT US -->
+        <div>
+            <label>How did you hear about us?</label>
+            <br>
+            <input type="checkbox" name="hearAbout[]" value="social_media"> Social Media
+            <input type="checkbox" name="hearAbout[]" value="friend_referral"> Friend Referral
+            <input type="checkbox" name="hearAbout[]" value="search_engine"> Search Engine
+            <input type="checkbox" name="hearAbout[]" value="advertisement"> Advertisement
+            <input type="checkbox" name="hearAbout[]" value="other"> Other
+            <br>
+            <input type="text" name="hearAboutOther" placeholder="If other, please specify" style="display:none;">
+        </div>
+        <br>
+        
+        <!-- TEXTBOX OPTIONAL COMMENT -->
+        <div class="comment-section">
+            <label for="comment">Comments/Remarks (Optional):</label>
+            <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Enter your comments"></textarea>
+        </div>
+        <br>
+
+        <!-- SUBMIT AND RESET BUTTONS -->
+        <div>
+            <input type="submit" name="submit" value="Submit" class="button">
+            <input type="reset" value="Reset" class="button">
+        </div>
+    </form>
+</body>
+
+<!-- I HAVE PLACED THIS SCRIPT HERE BECAUSE I AM TRYING TO DYNAMICALLY DISPLAY ALL THE STATES IN THE ARRAY IN MY SELECT DROPDOWN. -->
+<!-- I NEED TO HAVE THE HTML LOAD FIRST AND THEN BE ABLE TO EXTRACT THE JS CODE, WHICH MEANS I NEED TO PLACE IT AFTER THE BODY -->
+<!-- IF I PLACE THIS SCRIPT IN THE ABOVE SCRIPT IT WILL NOT WORK SINCE IT READS CODE FROM TOP TO BOTTOM SO I NEED THE HTML TO LOAD FIRST -->
+<script>
+        var states = [
+            "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"
+        ];
+
+        var stateSelect = document.getElementById("state");
+        for (var i = 0; i < states.length; i++) {
+            var option = document.createElement("option");
+            option.value = states[i];
+            option.textContent = states[i];
+            stateSelect.appendChild(option);
+        }
+</script>
+</html>
